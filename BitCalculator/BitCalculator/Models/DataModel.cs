@@ -8,7 +8,7 @@ namespace BitCalculator.Models
     public class DataModel
     {
         public int Quantity { set; get; }
-        public string Type { set; get; }
+        public int Type { set; get; }
         public int Kilo { set; get; }
     }
 }
