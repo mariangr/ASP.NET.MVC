@@ -1,5 +1,5 @@
 ﻿@using BitCalculator.Models
-@model DataModel
+@model TableDataModel
 
 @{
     ViewBag.Title = "BitCalculator";
@@ -38,7 +38,7 @@
     <br>
     <label for="kilo">Kilo</label>
     <br>
-    <select name="kilo" onchange="change()" class="form-control">
+    <select name="kilo">
         <option value="1024" selected="selected">1024</option>
         <option value="1000">1000</option>
     </select>
@@ -51,82 +51,82 @@
         <thead>
             <tr>
                 <td colspan="2">
-                    Storage (Kilo = 1024 bits)
+                    Storage (Kilo = @Model.multiplier bits)
                 </td>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td width="120">Bit</td>
-                <td width="150">8388608</td>
+                <td width="200">@Model.kilos[0]</td>
             </tr>
             <tr>
                 <td width="120">Byte</td>
-                <td width="150">1048576</td>
+                <td width="200">@Model.kilos[1]</td>
             </tr>
             <tr>
                 <td width="120">Kilobit</td>
-                <td width="150">8192</td>
+                <td width="200">@Model.kilos[2]</td>
             </tr>
             <tr>
                 <td width="120">Kilobyte</td>
-                <td width="150">1024</td>
+                <td width="200">@Model.kilos[3]</td>
             </tr>
             <tr>
                 <td width="120">Megabit</td>
-                <td width="150">8</td>
+                <td width="200">@Model.kilos[4]</td>
             </tr>
             <tr>
                 <td width="120">Megabyte</td>
-                <td width="150">1</td>
+                <td width="200">@Model.kilos[5]</td>
             </tr>
             <tr>
                 <td width="120">Gigabit</td>
-                <td width="150">0.0078125</td>
+                <td width="200">@Model.kilos[6]</td>
             </tr>
             <tr>
                 <td width="120">Gigabyte</td>
-                <td width="150">0.0009765625</td>
+                <td width="200">@Model.kilos[7]</td>
             </tr>
             <tr>
                 <td width="120">Terabit</td>
-                <td width="150">7.62939453125E-6</td>
+                <td width="200">@Model.kilos[8]</td>
             </tr>
             <tr>
                 <td width="120">Terabyte</td>
-                <td width="150">9.5367431640625E-7</td>
+                <td width="200">@Model.kilos[9]</td>
             </tr>
             <tr>
                 <td width="120">Petabit</td>
-                <td width="150">7.4505805969238E-9</td>
+                <td width="200">@Model.kilos[10]</td>
             </tr>
             <tr>
                 <td width="120">Petabyte</td>
-                <td width="150">9.3132257461548E-10</td>
+                <td width="200">@Model.kilos[11]</td>
             </tr>
             <tr>
                 <td width="120">Exabit</td>
-                <td width="150">7.2759576141834E-12</td>
+                <td width="200">@Model.kilos[12]</td>
             </tr>
             <tr>
                 <td width="120">Exabyte</td>
-                <td width="150">9.0949470177293E-13</td>
+                <td width="200">@Model.kilos[13]</td>
             </tr>
             <tr>
                 <td width="120">Zettabit</td>
-                <td width="150">7.105427357601E-15</td>
+                <td width="200">@Model.kilos[14]</td>
             </tr>
             <tr>
                 <td width="120">Zettabyte</td>
-                <td width="150">8.8817841970013E-16</td>
+                <td width="200">@Model.kilos[15]</td>
             </tr>
             <tr>
                 <td width="120">Yottabit</td>
-                <td width="150">6.9388939039072E-18</td>
+                <td width="200">@Model.kilos[16]</td>
             </tr>
             <tr>
                 <td width="120">Yottabyte</td>
-                <td width="150">8.673617379884E-19</td>
+                <td width="200">@Model.kilos[17]</td>
             </tr>
         </tbody>
     </table>

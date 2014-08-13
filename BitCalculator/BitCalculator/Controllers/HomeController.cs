@@ -18,7 +18,9 @@ namespace BitCalculator.Controllers
         public ActionResult BitCalculator(DataModel @dataModel)
         {
             //TO DO get array of table elements and fill the page from new model
-            return View(@dataModel);
+            TableDataModel tableData = new TableDataModel();
+            tableData.GetParams(@dataModel);
+            return View(tableData);
         }
 
     }
