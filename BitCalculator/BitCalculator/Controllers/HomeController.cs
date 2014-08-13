@@ -10,9 +10,13 @@ namespace BitCalculator.Controllers
     
     public class HomeController : Controller
     {
-        public ActionResult Index(DataModel @dataModel)
+        public ActionResult Index()
         {
-            //return Json(@dataModel.ToString());
+            return View();
+        }
+
+        public ActionResult BitCalculator(DataModel @dataModel)
+        {
             return View(@dataModel);
         }
 
