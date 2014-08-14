@@ -1,16 +1,19 @@
 ﻿@using BitCalculator.Models
-@model TableDataModel
+@model DataModel
 
 @{
     ViewBag.Title = "BitCalculator";
 }
 
+@Html.HiddenFor(m => m.Kilo)
+@Html.HiddenFor(m => m.Quantity)
+@Html.HiddenFor(m => m.Type)
 <h2>BitCalculator</h2>
 
-<form action="/Home/BitCalculator" method="post">
+<form>
     <label for="quantity">Quantity</label>
     <br>
-    <input name="quantity" value="0" />
+    <input id="get-quantity" name="quantity" value="1" />
     <br>
 
     <label for="type">Type</label>
@@ -43,91 +46,36 @@
         <option value="1000">1000</option>
     </select>
     <br>
-    <input type="submit" value="Go" />
+    <input type="button" onclick=generateTable() value="Go!"/>
+    <!--<input onclick="generateTable()" type="submit" value="Go" />-->
     <br>
-    <hr>
-
-    <table>
-        <thead>
-            <tr>
-                <td colspan="2">
-                    Storage (Kilo = @Model.multiplier bits)
-                </td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td width="120">Bit</td>
-                <td width="200">@Model.kilos[0]</td>
-            </tr>
-            <tr>
-                <td width="120">Byte</td>
-                <td width="200">@Model.kilos[1]</td>
-            </tr>
-            <tr>
-                <td width="120">Kilobit</td>
-                <td width="200">@Model.kilos[2]</td>
-            </tr>
-            <tr>
-                <td width="120">Kilobyte</td>
-                <td width="200">@Model.kilos[3]</td>
-            </tr>
-            <tr>
-                <td width="120">Megabit</td>
-                <td width="200">@Model.kilos[4]</td>
-            </tr>
-            <tr>
-                <td width="120">Megabyte</td>
-                <td width="200">@Model.kilos[5]</td>
-            </tr>
-            <tr>
-                <td width="120">Gigabit</td>
-                <td width="200">@Model.kilos[6]</td>
-            </tr>
-            <tr>
-                <td width="120">Gigabyte</td>
-                <td width="200">@Model.kilos[7]</td>
-            </tr>
-            <tr>
-                <td width="120">Terabit</td>
-                <td width="200">@Model.kilos[8]</td>
-            </tr>
-            <tr>
-                <td width="120">Terabyte</td>
-                <td width="200">@Model.kilos[9]</td>
-            </tr>
-            <tr>
-                <td width="120">Petabit</td>
-                <td width="200">@Model.kilos[10]</td>
-            </tr>
-            <tr>
-                <td width="120">Petabyte</td>
-                <td width="200">@Model.kilos[11]</td>
-            </tr>
-            <tr>
-                <td width="120">Exabit</td>
-                <td width="200">@Model.kilos[12]</td>
-            </tr>
-            <tr>
-                <td width="120">Exabyte</td>
-                <td width="200">@Model.kilos[13]</td>
-            </tr>
-            <tr>
-                <td width="120">Zettabit</td>
-                <td width="200">@Model.kilos[14]</td>
-            </tr>
-            <tr>
-                <td width="120">Zettabyte</td>
-                <td width="200">@Model.kilos[15]</td>
-            </tr>
-            <tr>
-                <td width="120">Yottabit</td>
-                <td width="200">@Model.kilos[16]</td>
-            </tr>
-            <tr>
-                <td width="120">Yottabyte</td>
-                <td width="200">@Model.kilos[17]</td>
-            </tr>
-        </tbody>
-    </table>
 </form>
+<hr>
+
+<div class="table-content"></div>
+
+<script>
+    generateTable();
+
+    function generateTable() {
+        try{
+            var form = $('form');
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("BitCalculator","Home")',
+                data: form.serialize(),
+
+                success: function (html) {
+                    $('.table-content').html(html);
+                },
+                error: function () {
+                    $('.table-content').html("Error");
+                }
+            })
+        }
+        catch(ex){
+            console.dir(ex.message);
+        }
+        return false;
+    }
+    </script>
