@@ -1,0 +1,1 @@
+D:\Projects\ASP.NET MVC\InformationalApplication\InformationalApplication\obj\Debug\InformationalApplication.csprojResolveAssemblyReference.cache
