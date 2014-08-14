@@ -46,8 +46,7 @@
         <option value="1000">1000</option>
     </select>
     <br>
-    <input type="button" onclick=generateTable() value="Go!"/>
-    <!--<input onclick="generateTable()" type="submit" value="Go" />-->
+    <input type="submit" id="submit-btn" value="Go!"/>
     <br>
 </form>
 <hr>
@@ -57,25 +56,27 @@
 <script>
     generateTable();
 
+    $("#submit-btn").on('click', function (event) {
+        event.preventDefault();
+        console.log(event);
+        generateTable();
+    })
+    
     function generateTable() {
-        try{
-            var form = $('form');
-            $.ajax({
-                type: 'POST',
-                url: '@Url.Action("BitCalculator","Home")',
-                data: form.serialize(),
+        var form = $('form');
 
-                success: function (html) {
-                    $('.table-content').html(html);
-                },
-                error: function () {
-                    $('.table-content').html("Error");
-                }
-            })
-        }
-        catch(ex){
-            console.dir(ex.message);
-        }
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("BitCalculator","Home")',
+            data: form.serialize(),
+
+            success: function (html) {
+                $('.table-content').html(html);
+            },
+            error: function () {
+                $('.table-content').html("Error");
+            }
+        })
         return false;
     }
     </script>
