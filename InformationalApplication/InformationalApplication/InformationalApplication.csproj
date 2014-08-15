@@ -186,6 +186,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SiteContentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,6 +229,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -240,6 +242,26 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\SiteContent\_Overview.cshtml" />
+    <Content Include="Views\SiteContent\_StressConditionsExamples.cshtml" />
+    <Content Include="Views\SiteContent\_StressRelatedSymptomsExamples.cshtml" />
+    <Content Include="Views\SiteContent\_HowToUseTheGivenInformarion.cshtml" />
+    <Content Include="Views\SiteContent\_Input.cshtml" />
+    <Content Include="Views\SiteContent\_Output.cshtml" />
+    <Content Include="Views\SiteContent\_StressTestingApproach.cshtml" />
+    <Content Include="Views\SiteContent\_S1_IdentifyTestObjectives.cshtml" />
+    <Content Include="Views\SiteContent\_S2_IdentifyKeyScenarios.cshtml" />
+    <Content Include="Views\SiteContent\_S3_IdentifyWorkload.cshtml" />
+    <Content Include="Views\SiteContent\_S4_IdentifyMetrics.cshtml" />
+    <Content Include="Views\SiteContent\_S5_CreateTestCases.cshtml" />
+    <Content Include="Views\SiteContent\_S6_SimulateLoad.cshtml" />
+    <Content Include="Views\SiteContent\_S7_AnalyzeResults.cshtml" />
+    <Content Include="Views\SiteContent\_StressTestingUsageScenarios.cshtml" />
+    <Content Include="Views\SiteContent\_ExploratoryStressTesting.cshtml" />
+    <Content Include="Views\SiteContent\_SomeStressTestTools.cshtml" />
+    <Content Include="Views\SiteContent\_Summary.cshtml" />
+    <Content Include="Views\SiteContent\_Referenses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
