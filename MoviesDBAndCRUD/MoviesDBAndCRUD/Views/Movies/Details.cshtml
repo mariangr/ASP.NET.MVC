@@ -1,0 +1,106 @@
+﻿@model MoviesDBAndCRUD.Models.Movy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movy</h4>
+	<hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMaleRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMaleRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMaleRoleAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMaleRoleAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMaleRoleAgeStudio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMaleRoleAgeStudio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMaleRoleAgeStudioAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMaleRoleAgeStudioAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemaleRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemaleRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemaleRoleAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemaleRoleAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemaleRoleStudio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemaleRoleStudio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemaleRoleStudioAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemaleRoleStudioAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MoviesDBModelStoreContainer" CdmEntityContainer="MoviesEntities">
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="MoviesDBModel.Movy">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="LeadingMaleRole" ColumnName="LeadingMaleRole" />
+          <ScalarProperty Name="LeadingMaleRoleAge" ColumnName="LeadingMaleRoleAge" />
+          <ScalarProperty Name="LeadingMaleRoleAgeStudio" ColumnName="LeadingMaleRoleAgeStudio" />
+          <ScalarProperty Name="LeadingMaleRoleAgeStudioAddress" ColumnName="LeadingMaleRoleAgeStudioAddress" />
+          <ScalarProperty Name="LeadingFemaleRole" ColumnName="LeadingFemaleRole" />
+          <ScalarProperty Name="LeadingFemaleRoleAge" ColumnName="LeadingFemaleRoleAge" />
+          <ScalarProperty Name="LeadingFemaleRoleStudio" ColumnName="LeadingFemaleRoleStudio" />
+          <ScalarProperty Name="LeadingFemaleRoleStudioAddress" ColumnName="LeadingFemaleRoleStudioAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

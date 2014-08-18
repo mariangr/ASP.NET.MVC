@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MoviesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Director" Type="varchar" MaxLength="200" />
+    <Property Name="Year" Type="int" />
+    <Property Name="LeadingMaleRole" Type="varchar" MaxLength="200" />
+    <Property Name="LeadingMaleRoleAge" Type="int" />
+    <Property Name="LeadingMaleRoleAgeStudio" Type="varchar" MaxLength="100" />
+    <Property Name="LeadingMaleRoleAgeStudioAddress" Type="varchar" MaxLength="500" />
+    <Property Name="LeadingFemaleRole" Type="varchar" MaxLength="200" />
+    <Property Name="LeadingFemaleRoleAge" Type="int" />
+    <Property Name="LeadingFemaleRoleStudio" Type="varchar" MaxLength="100" />
+    <Property Name="LeadingFemaleRoleStudioAddress" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="MoviesDBModelStoreContainer">
+    <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

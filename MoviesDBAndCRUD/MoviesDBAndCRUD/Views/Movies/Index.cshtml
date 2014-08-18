@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MoviesDBAndCRUD.Models.Movy>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table border="1" style="width: 800px; text-align:center; align-content:center;" align="center">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Director
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Leading Male Role
+        </th>
+        <th>
+            Leading Male Role Age
+        </th>
+        <th>
+            Leading Male Role Age Studio
+        </th>
+        <th>
+            Leading Male Role Age Studio Address
+        </th>
+        <th>
+            Leading Female Role
+        </th>
+        <th>
+            Leading Female Role Age
+        </th>
+        <th>
+            Leading Female Role Studio
+        </th>
+        <th>
+            Leading Female Role Studio Address
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingMaleRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingMaleRoleAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingMaleRoleAgeStudio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingMaleRoleAgeStudioAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingFemaleRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingFemaleRoleAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingFemaleRoleStudio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingFemaleRoleStudioAddress)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) <hr>
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) <hr>
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

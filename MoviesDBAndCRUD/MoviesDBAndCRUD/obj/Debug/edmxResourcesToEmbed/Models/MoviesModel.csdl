@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MoviesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Movy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Director" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="LeadingMaleRole" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LeadingMaleRoleAge" Type="Int32" />
+    <Property Name="LeadingMaleRoleAgeStudio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LeadingMaleRoleAgeStudioAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LeadingFemaleRole" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LeadingFemaleRoleAge" Type="Int32" />
+    <Property Name="LeadingFemaleRoleStudio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LeadingFemaleRoleStudioAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="MoviesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Movies" EntityType="Self.Movy" />
+  </EntityContainer>
+</Schema>
